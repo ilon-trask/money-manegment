@@ -1,0 +1,25 @@
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+model GeneralData {
+    id      String   @id
+    balance Int
+    salary  Int
+    records Record[]
+}
+
+model Record {
+    id            Int         @id @default(autoincrement())
+    name          String
+    type          String
+    sum           Float
+    createdAt     DateTime    @default(now())
+    GeneralData   GeneralData @relation(fields: [generalDataId], references: [id])
+    generalDataId String
+}
