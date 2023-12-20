@@ -7,6 +7,7 @@ import CreateGeneralData, {
 } from "../CreateGeneralData/CreateGeneralData";
 import useGeneralDataStore from "../../stores/GeneralDataStore";
 import getGeneralData from "./funcs/getGeneralData";
+import useComfortNumber from "../../funcs/useComfortNumber";
 
 function MainValues(props: BoxProps) {
   useEffect(() => {
@@ -36,7 +37,7 @@ function MainValues(props: BoxProps) {
           fontWeight={"bold"}
           fontSize={"40px"}
         >
-          {generalData?.balance}
+          {useComfortNumber(generalData?.balance)}
         </Text>
         <Text as={"span"}>грн.</Text>
       </Card>
@@ -55,7 +56,7 @@ function MainValues(props: BoxProps) {
           fontWeight={"bold"}
           fontSize={"40px"}
         >
-          {generalData?.salary}
+          {useComfortNumber(generalData?.salary)}
         </Text>
         <Text as={"span"}>грн./міс.</Text>
       </Card>

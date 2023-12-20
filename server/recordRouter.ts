@@ -9,10 +9,6 @@ const createType = z.object({
   generalDataId: z.string(),
 });
 
-const editType = createType.extend({
-  id: z.string(),
-});
-
 const formatRecordData = (recordData: Record) => {
   const formattedRecordData: Record = {
     ...recordData,

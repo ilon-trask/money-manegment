@@ -3,7 +3,7 @@ import { AppRouter } from "../../../server";
 const client = createTRPCProxyClient<AppRouter>({
   links: [
     httpBatchLink({
-      url: "http://localhost:5000/",
+      url: "https://money-manegment-production.up.railway.app/",
     }),
   ],
 });

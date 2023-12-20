@@ -14,6 +14,7 @@ import { Record } from "../../../../../../server/types";
 import useGeneralDataStore from "../../../../stores/GeneralDataStore";
 import useRecordStore from "../../../../stores/RecordStore";
 import client from "../../../../funcs/trpc";
+import useComfortNumber from "../../../../funcs/useComfortNumber";
 
 function useDateFormat(date: string | Date) {
   const parsedDate = new Date(date);
@@ -57,7 +58,7 @@ function Row({
           <></>
         )}
       </Td>
-      <Td isNumeric>{sum}</Td>
+      <Td isNumeric>{useComfortNumber(sum)}</Td>
       <Td>{useDateFormat(createdAt)}</Td>
       <Td onClick={() => deleteRecord(id)}>
         <MyDeleteIcon />
