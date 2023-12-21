@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "jsx": "react",
+    // "baseUrl": ".",
+    "esModuleInterop": true
+    // "paths": {
+    //   "@ui/*": ["./src/ui/*"],
+    //   "@/*": ["./src/*"]
+    // }
+  }
+}
